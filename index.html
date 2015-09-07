@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PixiJS Parallax Scroller</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="Pixijs parallax scroller">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style/main.css">
+  </head>
+  <body onload="init()">
+  <div class="wrapper">
+    <canvas id="gameCanvas" class="gameCanvas" width="512" height="384">
+    </canvas>
+  </div>
+  <script src="js/pixi.js"></script>
+  <script src="js/far.js"></script>
+  <script src="js/mid.js"></script>
+  <script src="js/scroller.js"></script>
+  <script src="js/wallspritespool.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+  function init() {
+    main = new Main();
+  }
+//   function update() {
+      
+//     //far.position.x -=0.128;
+//     //mid.position.x -=0.64;
+    
+//     /*far.tilePosition.x -= 0.128;
+//     mid.tilePosition.x -= 0.64;*/
+
+//     /*far.update();
+//     mid.update();*/
+    
+//     /*scroller.update();*/
+
+
+
+//     renderer.render(stage);
+//     requestAnimationFrame(update);
+//   }
+
+//   function init() {
+//     stage = new PIXI.Stage(0x66FF99,false);
+//     renderer = PIXI.autoDetectRenderer(
+//           512,
+//           384,
+//           {view: document.getElementById("gameCanvas")}
+//         );
+//     width = document.getElementById("gameCanvas").width;
+    
+//     //var farTexture = PIXI.Texture.fromImage("resources/bg-far.png");
+    
+//     //far = new PIXI.Sprite(farTexture);
+//     //far = new PIXI.TilingSprite(farTexture, 512, 256);
+//     /*far = new PIXI.extras.TilingSprite(
+//       farTexture,
+//       farTexture.baseTexture.width,
+//       farTexture.baseTexture.height
+//       );*/
+
+//      far = new Far();
+// /*                farTexture,
+//                 farTexture.baseTexture.width,
+//                 farTexture.baseTexture.height
+//           );*/
+
+//     /*far.position.x = 0;
+//     far.position.y = 0;
+//     far.tilePosition.x = 0;
+//     far.tilePosition.y = 0;*/
+//     /*stage.addChild(far);*/
+
+//     /*var midTexture = PIXI.Texture.fromImage("resources/bg-mid.png")
+//     //mid = new PIXI.Sprite(midTexture);
+//     mid = new PIXI.extras.TilingSprite(
+//       midTexture,
+//       midTexture.baseTexture.width,
+//       midTexture.baseTexture.height
+//       );
+//     mid.position.x = 0;
+//     mid.position.y = 128;
+//     mid.tilePosition.x = 0;
+//     mid.tilePosition.y = 0;*/
+//     /*mid = new Mid();
+//     stage.addChild(mid);*/
+
+//     //renderer.render(stage);
+//     scroller = new Scroller(stage);
+    
+//     /*var newViewPortX = scroller.getViewPortX() + 5;*/
+//     scroller.moveViewPortXBy(10);
+
+//     requestAnimationFrame(update); 
+//   }
+
+//   init();
+  </script>
+  </body>
+</html>
