@@ -5,6 +5,11 @@ function Scroller(stage) {
   this.mid = new Mid();
   stage.addChild(this.mid);
 
+  this.front = new Walls();
+  stage.addChild(this.front);
+
+  this.mapBuilder = new MapBuilder(this.front);
+
   this.viewPortX = 0;
 }
 
@@ -19,6 +24,8 @@ Scroller.prototype.setViewPortX = function(viewPortX) {
 
   this.far.setViewPortX(viewPortX);
   this.mid.setViewPortX(viewPortX);
+  this.front.setViewPortX(viewPortX);
+
 }
 
 Scroller.prototype.getViewPortX = function() {
