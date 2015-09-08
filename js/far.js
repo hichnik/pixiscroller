@@ -11,7 +11,7 @@ function Far() {
 Far.constructor = Far;
 Far.prototype = Object.create(PIXI.extras.TilingSprite.prototype);
 
-Far.DELTA_X = 0.128;
+Far.DELTA_X = 0.064;
 
 /*Far.prototype.update = function() {
   this.tilePosition.x -= 0.128;

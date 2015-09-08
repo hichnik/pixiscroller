@@ -1,3 +1,22 @@
+/* TODO: 
+
+  Fix a BUG to make a map endless...
+  Make a Map Random
+  Make a random wall/span/stepped wall
+  1/30 chance stepped wall
+  Endless scroller - add maps dynamically
+  Add more parallax Layers
+  Implement vertical movement 
+  Add a hero to the map
+  .. and much much more 
+
+  thanks 
+  http://www.yeahbutisitflash.com/?p=7046
+  for the great tutorial about pixijs and js game development techniques
+
+*/
+
+
 function Main() {
   this.stage = new PIXI.Stage(0x66FF99);
   this.renderer = new PIXI.autoDetectRenderer(
@@ -9,14 +28,30 @@ function Main() {
 
 //  this.scroller = new Scroller(this.stage);
 //  requestAnimationFrame(this.update.bind(this));
+  this.scrollSpeed = Main.MIN_SCROLL_SPEED;
+
   this.loadSpriteSheet();
 
 };
 
-Main.SCROLL_SPEED = 1;
+/*Main.SCROLL_SPEED = 1;*/
+Main.MIN_SCROLL_SPEED = 5.0005;
+Main.MAX_SCROLL_SPEED = 15;
+Main.SCROLL_ACCELLERATION = 0.005;
+
 
 Main.prototype.update = function() {
-  this.scroller.moveViewPortXBy(Main.SCROLL_SPEED);
+  
+  //this.scroller.moveViewPortXBy(Main.SCROLL_SPEED);
+  this.scroller.moveViewPortXBy(this.scrollSpeed);
+
+  this.scrollSpeed += Main.SCROLL_ACCELLERATION;
+
+  if (this.scrollSpeed > Main.MAX_SCROLL_SPEED) {
+    this.scrollSpeed = Main.MAX_SCROLL_SPEED
+    console.log(" MAX_SCROLL_SPEED ");
+  }
+
   this.renderer.render(this.stage);
   requestAnimationFrame(this.update.bind(this));
 };
